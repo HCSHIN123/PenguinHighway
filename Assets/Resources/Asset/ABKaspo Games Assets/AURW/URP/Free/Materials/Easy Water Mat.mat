@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6012340044417674892
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Easy Water Mat
+  m_Shader: {fileID: -6465566751694194690, guid: 8ffa9af80ce14f94ab84cec797642cad,
+    type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _REFLECTION
+  - _REFRACTION
+  - _REFRACTION_QUALITY_NORMAL
+  - _SURFACE_TYPE_TRANSPARENT
+  - _WATER_QUALITY_LOW_QUALITY
+  m_InvalidKeywords:
+  - _DISPLACEMENT_TEXTURE
+  - _ENUM_C
+  - _QUALITY_HIGH_QUALITY
+  - _QUALITY_MEDIUM_RENDERING
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - DepthOnly
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BiggerNormal:
+        m_Texture: {fileID: 2800000, guid: c8a1512e1a09d3e4baf6cd2d3cd682f2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Displacement_Texture:
+        m_Texture: {fileID: 2800000, guid: 41b69c337f6884c46a0c4d74f198ecdc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Foam:
+        m_Texture: {fileID: 2800000, guid: da1b53af1ce67ac458852697796ebdf0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FoamNormal:
+        m_Texture: {fileID: 2800000, guid: 5527e3aa55a694a4f9f6dca2113a1148, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainNormal:
+        m_Texture: {fileID: 2800000, guid: bb66f4f99474be94d85c3e5cf1b04cd6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondNormal:
+        m_Texture: {fileID: 2800000, guid: 0db4dc98448033d4a800710091b2c27d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ALPHA_CHANNEL: 0
+    - _AlphaClip: 0
+    - _AlphaToMask: 0
+    - _Blend: 0
+    - _BlendModePreserveSpecular: 0
+    - _CastShadows: 1
+    - _Cull: 2
+    - _DISPLACEMENT: 0
+    - _Depth: 0.3
+    - _DstBlend: 10
+    - _HeighFrequency: 10
+    - _Normal_Strength: 0.75
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _REFLECTION: 1
+    - _REFRACTION: 1
+    - _REFRACTION_QUALITY: 1
+    - _ReceiveShadows: 1
+    - _Reflection: 0.34
+    - _Refraction: 0.01
+    - _Smoothness: 0.95
+    - _Speed: 0.5
+    - _SrcBlend: 5
+    - _Surface: 1
+    - _TIlling: 1
+    - _Tilling: 12
+    - _WATER_QUALITY: 1
+    - _WaveAmplitude: 0.05
+    - _WaveSpeed: 0.05
+    - _WorkflowMode: 1
+    - _ZTest: 4
+    - _ZWrite: 0
+    - _ZWriteControl: 0
+    m_Colors:
+    - _Color_A: {r: 0.011764706, g: 0, b: 0.7490196, a: 0.9607843}
+    - _Color_B: {r: 0, g: 0.26912943, b: 1.3584906, a: 0.9411765}
+    - _Color_C: {r: 0, g: 0.6, b: 1, a: 0}
+    - _Direction: {r: 1, g: 0, b: 0, a: 0}
+    - _Fog: {r: 0, g: 0.37715155, b: 0.71322733, a: 1}
+  m_BuildTextureStacks: []

@@ -1,0 +1,12 @@
+# Aspose.3D Wavefront OBJ Exporter
+# Copyright 2004-2024 Aspose Pty Ltd.
+# File created: 06/27/2024 03:21:13
+
+newmtl MAT_Penguin
+	Ka 0 0 0
+	Kd 1 1 1
+	Ke 0 0 0
+	illum 2
+	d 1
+	Tr 0
+	map_Kd PenguinDiff.png
