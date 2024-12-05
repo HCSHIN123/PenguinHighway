@@ -10,7 +10,7 @@ public class FieldItem : MonoBehaviour
     public GameObject bulletObject = null;
 
     private Vector3 centerPos = Vector3.zero;
-    public int id = -1;
+   
 
     public int keyId = -1;
 
