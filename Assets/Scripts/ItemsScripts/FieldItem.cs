@@ -20,12 +20,12 @@ public class FieldItem : MonoBehaviour
 
     public void InitFieldItem(int _keyId, Action _callback)
     {
-        keyId = _keyId;
-        bulletObject = Instantiate(bullet.gameObject);
-        Bullet b = bulletObject.GetComponent<Bullet>();
-        b.InitBullet(keyId, _callback);
-        b.gameObject.SetActive(false);
-        this.gameObject.SetActive(false);
+        keyId = _keyId; // 키값 저장    
+        bulletObject = Instantiate(bullet.gameObject); // 총알인스턴스 생성
+        Bullet b = bulletObject.GetComponent<Bullet>(); // 캐싱
+        b.InitBullet(keyId, _callback); // 총알 초기화
+        b.gameObject.SetActive(false);  // 비활성화
+        this.gameObject.SetActive(false);   // 비활성화
     }
 
     private void Update()
