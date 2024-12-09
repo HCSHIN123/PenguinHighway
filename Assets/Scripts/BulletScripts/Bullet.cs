@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public Action ReturnToPoolCallback;
-    public int keyId = -1;
+    public Action ReturnToPoolCallback; //재사용로직 함수를 담는 변수
+    public int keyId = -1;  // 고유 키값
 
     // 초기화용 변수들
     private Vector3 startPos = Vector3.zero;
@@ -34,26 +34,21 @@ public class Bullet : MonoBehaviour
     protected AudioSource sound;              // 사운드
     virtual protected void Start()
     {
-        startPos = transform.localPosition;
-        startRot = transform.localRotation;
         rb = GetComponent<Rigidbody>();
         sound = GetComponent<AudioSource>();
     }
 
-    public void InitBullet(int _keyId, Action _returnToPool)
+    public void InitBullet(int _keyId, Action _returnToPool) // 장착시 호출
     {
-        keyId = _keyId;
-        ReturnToPoolCallback = _returnToPool;
-        if (ReturnToPoolCallback == null)
-        {
-            Debug.LogError("ReturnToPoolCallback is null");
-        }
-       
+        keyId = _keyId; // 관리되는 딕셔너리의 고유 키값
+        ReturnToPoolCallback = _returnToPool; // 사용이 끝나면 풀링되는 로직의 콜백함수
     }
 
     virtual public void ReadyToShoot()  // 발사준비, 장전시 호출되는 총알의 상태를 초기화하는 함수
     {
         gameObject.SetActive(true);         // SetActive 활성화
+        startPos = transform.localPosition;
+        startRot = transform.localRotation;
         isHited = false;                    // 충돌여부 false
         progressRate = 0.0f;                // 진행도 0으로 초기화
         ReadyRB();                          // 리지드바디 발사준비
@@ -123,7 +118,7 @@ public class Bullet : MonoBehaviour
 
     public void HitBullet()
     {
-        isHited = true;
+        isHited = true; // 충돌이벤트 중복처리 방지목적
     }
     private void ReadyRB()
     {
@@ -143,15 +138,13 @@ public class Bullet : MonoBehaviour
     {
         isHited = true;   // 먼저 충돌 처리
         sound?.Play();    // 효과음 재생
-        Invoke("Die", 10f);
+        Invoke("Die", 10f); // 10초 후 사망처리
     }
 
     private void Die()
     {
-        Debug.Log("BULLET DIE" + ReturnToPoolCallback);
-        
-        this.gameObject.SetActive(false);
-        ReturnToPoolCallback();
+        this.gameObject.SetActive(false); // 오브젝트 비활성화
+        ReturnToPoolCallback(); // 풀링 콜백함수 실행
     }
 
 }

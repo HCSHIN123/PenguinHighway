@@ -11,44 +11,7 @@ public class DB : MonoBehaviour
     string SetDataUri = "http://127.0.0.1/SetData.php";
     string CheckDataUri = "http://127.0.0.1/CheckData.php";
 
-    private void Awake()
-    {
-
-    }
-
-    void Start()
-    {
-
-        /*loginButton.onClick.AddListener(() =>
-        {
-            StartCoroutine(LoginCoroutine(id.text, pw.text));
-        });
-
-
-        accountButton.onClick.AddListener(() =>
-        {
-            StopCoroutine("LoginCoroutine");
-
-
-            checkaccountButton.onClick.AddListener(() =>
-            {
-                StartCoroutine(CheckDataCoroutine(cId.text));
-            });
-
-
-            makeaccountButton.onClick.AddListener(() =>
-            {
-                if (checkPassword(cPw.text))
-                {
-                    StartCoroutine(SetDataCoroutine(cId.text, cPw.text));
-                }
-                if (!checkPassword(cPw.text))
-                {
-                    StartCoroutine(textCoroutine());
-                }
-            });
-        });*/
-    }
+  
 
     private IEnumerator LoginCoroutine(string username, string password)
     {

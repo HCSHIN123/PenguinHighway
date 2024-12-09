@@ -10,11 +10,10 @@ public class Bullet_Ink : Bullet_RangeAttack
 
     protected override void Bomb()
     {
-        Collider[] target = Physics.OverlapSphere(transform.position, bombRange, targetMask);
-        if (target.Length >= 1)
+        Collider[] target = Physics.OverlapSphere(transform.position, bombRange, targetMask);   // Sphere범위의 있는 콜라이더 탐지
+        if (target.Length >= 1) // 존재하면 해당 대상에 효과 적용
             target[0].GetComponentInChildren<UIManager>()?.PlayerUIEvent(type);
-            // UIManager.Instance.PlayerUIEvent(type);
-            // target[0].GetComponent<PlayerDamaged>().InkToScreen(type); // RPC로 상대한테만
+            
     }
     
     protected override void OnCollisionBulletEvent(Collision collision)
@@ -25,7 +24,7 @@ public class Bullet_Ink : Bullet_RangeAttack
             isHited = true;
             isUsed = true;
             StartCoroutine(COR_Bomb());
-            // Bomb();
+            
         }
     }
 

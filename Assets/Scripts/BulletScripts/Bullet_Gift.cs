@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Bullet_Gift : Bullet
 {
+    private FieldItem myFieldItem;
+    private void Awake()
+    {
+        myFieldItem = GetComponent<FieldItem>();
+    }
     protected override void OnCollisionBulletEvent(Collision collision)
     {
         if (isHited)    // 이미 충돌을 했다면 Return
@@ -12,8 +17,7 @@ public class Bullet_Gift : Bullet
             return;
         if (collision.gameObject.CompareTag("Player"))  // 플레이어와 충돌시 이벤트
         {
-
-            GetComponent<FieldItem>().ItemCollisionPlayer(collision);
+            myFieldItem.ItemCollisionPlayer(collision);
             if (progressRate <= 0.2f)
                 return;
             if (isHited)

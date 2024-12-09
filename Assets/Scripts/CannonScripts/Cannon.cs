@@ -66,7 +66,7 @@ public class Cannon : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    private void TEST_BulletApply()
+    private void TEST_BulletApply() // 테스트코드
     {
         if (bullet != null)
         { 
@@ -116,7 +116,7 @@ public class Cannon : MonoBehaviourPunCallbacks
             TriggerOut();
     }
 
-    public void TriggerOn()
+    public void TriggerOn() // 게이지채우는 처리
     {
         if (bullet == null)
             return;
@@ -128,7 +128,7 @@ public class Cannon : MonoBehaviourPunCallbacks
         UpdateBulletPath();
     }
 
-    public void TriggerOut()
+    public void TriggerOut() // 게이지에 따른 발사처리
     {
         if (bullet == null)
             return;
@@ -138,7 +138,6 @@ public class Cannon : MonoBehaviourPunCallbacks
         pv.RPC("ShootingNetwork", RpcTarget.All, bulletPathList.ToArray());
         indicateGiftCallback?.Invoke(false);
         audioSource.GetComponent<AudioSource>().Play();
-        //itemChargeUI.SetIconImg(Bullet.eBulletType.End);
          if(shootPort.childCount > 0)
         {
             Debug.Log("DET : " + shootPort.childCount);
@@ -159,7 +158,7 @@ public class Cannon : MonoBehaviourPunCallbacks
         }
     }
 
-    public bool RequestBullet(int _idx)
+    public bool RequestBullet(int _idx) // 총알요청RPC호출함수
     {
         if (bullet != null)
             return false;
@@ -167,7 +166,7 @@ public class Cannon : MonoBehaviourPunCallbacks
         return true;
     }
     
-    public void SetBullet(Bullet _bullet)
+    public void SetBullet(Bullet _bullet) // 총알장착RPC호출함수
     {
         if(_bullet == null) 
             return;
@@ -175,23 +174,14 @@ public class Cannon : MonoBehaviourPunCallbacks
         pv.RPC("SetBulletNetwork", RpcTarget.AllBuffered, _bullet);
     }
 
-    public void AttachBulletRandom()
+    public void AttachBullet(Bullet _go)    // 총알 부착하는 메소드
     {
         if (bullet != null)
             return;
-       // int randint = Random.Range(0, bulletFactory.bulletPrefabs.Length);
-
-       // pv.RPC("SetBulletNetwork", RpcTarget.OthersBuffered, randint);
-    }
-    
-    public void AttachBullet(Bullet _go)
-    {
-        if (bullet != null)
-            return;
-        bullet = _go;
-        bullet.ReadyToShoot();
-        bullet.gameObject.transform.SetParent(firePort.bulletPos, false);
-        bullet.gameObject.transform.localPosition = Vector3.zero;
+        bullet = _go;   // 총알 장착
+        bullet.ReadyToShoot();  // 총알 초기화(준비)
+        bullet.gameObject.transform.SetParent(firePort.bulletPos, false); // 총알 자식으로 붙이기
+        bullet.gameObject.transform.localPosition = Vector3.zero;   // 로컬포지션 초기화
     }
 
 

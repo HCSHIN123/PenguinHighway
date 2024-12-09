@@ -12,7 +12,7 @@ public abstract class Bullet_DistributedAttack : Bullet
     {
         base.ReadyToShoot();
         isSplit = false;
-        foreach(Transform t in bulletTransforms) 
+        foreach(Transform t in bulletTransforms)    // 분신총알들 초기화
         {
             t.GetComponent<Rigidbody>().useGravity = false;
             t.GetComponent<Rigidbody>().isKinematic = true;

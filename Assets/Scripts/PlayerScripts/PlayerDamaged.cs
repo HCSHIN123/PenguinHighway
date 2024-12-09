@@ -34,7 +34,7 @@ public class PlayerDamaged : MonoBehaviour
         callbackStunEvent?.Invoke();
     }
 
-    public void InkToScreen(UIManager.eEffectType _type, float _time = 3f)
+    public void InkToScreen(UIManager.eEffectType _type, float _time = 3f)  // 잉크를 맞는 함수
     {
         if (!GetComponent<PhotonView>().IsMine)
             return;
@@ -45,7 +45,7 @@ public class PlayerDamaged : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(COR_BlindScreen(_time));
     }
-    IEnumerator COR_BlindScreen(float _time = 3f)
+    IEnumerator COR_BlindScreen(float _time = 3f)   // 잉크가 스크린 UI에 점차 사라지게 하는 효과
     {
         ink.gameObject.SetActive(true);
         Vector4 targetColor = new Vector4(ink.color.r, ink.color.g, ink.color.b, 0.0f);
